@@ -1,0 +1,82 @@
+[
+  {
+    "name": "BTCBitcoin",
+    "price": "$26,802.86"
+  },
+  {
+    "name": "ETHEthereum",
+    "price": "$1,557.73"
+  },
+  {
+    "name": "USDTTether USDt",
+    "price": "$0.9998"
+  },
+  {
+    "name": "BNBBNB",
+    "price": "$205.26"
+  },
+  {
+    "name": "XRPXRP",
+    "price": "$0.4776"
+  },
+  {
+    "name": "USDCUSDC",
+    "price": "$1.00"
+  },
+  {
+    "name": "SOLSolana",
+    "price": "$21.47"
+  },
+  {
+    "name": "ADACardano",
+    "price": "$0.2465"
+  },
+  {
+    "name": "DOGEDogecoin",
+    "price": "$0.05828"
+  },
+  {
+    "name": "TRXTRON",
+    "price": "$0.08585"
+  },
+  {
+    "name": "TONToncoin",
+    "price": "$2.01"
+  },
+  {
+    "name": "DAIDai",
+    "price": "$0.9995"
+  },
+  {
+    "name": "MATICPolygon",
+    "price": "$0.5126"
+  },
+  {
+    "name": "DOTPolkadot",
+    "price": "$3.71"
+  },
+  {
+    "name": "LTCLitecoin",
+    "price": "$61.27"
+  },
+  {
+    "name": "WBTCWrapped Bitcoin",
+    "price": "$26,804.97"
+  },
+  {
+    "name": "BCHBitcoin Cash",
+    "price": "$213.81"
+  },
+  {
+    "name": "LINKChainlink",
+    "price": "$7.31"
+  },
+  {
+    "name": "SHIBShiba Inu",
+    "price": "$0.000006806"
+  },
+  {
+    "name": "LEOUNUS SED LEO",
+    "price": "$3.72"
+  }
+]

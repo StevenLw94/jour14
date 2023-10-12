@@ -1,0 +1,53 @@
+require 'httparty'
+require 'nokogiri'
+
+def get_mairie_data(url)
+  response = HTTParty.get(url)
+
+  if response.success?
+    page = Nokogiri::HTML(response.body)
+    ville = page.css('h1').text
+    email = page.css('td.style27 p.Style22 font').text.strip
+    return { ville: ville, email: email }
+  else
+    return nil
+  end
+end
+
+def get_mairies_data(url)
+  response = HTTParty.get(url)
+
+  if response.success?
+    page = Nokogiri::HTML(response.body)
+    mairies_data = []
+
+    links = page.css('table a.lientxt')
+    links.each do |link|
+      mairie_url = "http://annuaire-des-mairies.com" + link['href']
+      mairie_data = get_mairie_data(mairie_url)
+      mairies_data << mairie_data if mairie_data
+    end
+
+    return mairies_data
+  else
+    return nil
+  end
+end
+
+def main
+  base_url = 'http://annuaire-des-mairies.com/val-d-oise.html'
+  mairies_data = get_mairies_data(base_url)
+
+  if mairies_data
+    mairies_data.each_with_index do |data, index|
+    
+      puts "Ville: #{data[:ville]}"
+      puts "Email: #{data[:email]}"
+      puts "-----------"
+    end
+  else
+    puts "Erreur lors de la récupération des données des mairies."
+  end
+end
+
+main

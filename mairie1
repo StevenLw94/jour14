@@ -1,0 +1,25 @@
+require 'open-uri'
+require 'nokogiri'
+require 'httparty'
+
+def get_mairie_email(url)
+ response = HTTParty.get(url)
+  if response.success?
+    page = Nokogiri::HTML(response.body) # Utilisez les sélecteurs CSS pour cibler l'élément contenant l'adresse e-mail
+  email_element = page.css('body > div > main > section:nth-child(2) > div > table > tbody > tr:nth-child(4) > td:nth-child(2)')
+
+  # Obtenez le texte de l'élément (c'est-à-dire l'adresse e-mail)
+  email = email_element.text.strip
+
+  return email
+  end 
+
+end
+
+# Utilisez la fonction en fournissant l'URL de la page de la mairie
+url_de_la_mairie = 'http://annuaire-des-mairies.com/95/avernes.html'
+email_de_la_mairie = get_mairie_email(url_de_la_mairie)
+
+puts "L'adresse e-mail de la mairie est : #{email_de_la_mairie}"
+
+
